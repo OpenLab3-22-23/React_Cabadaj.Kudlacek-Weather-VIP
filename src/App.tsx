@@ -14,9 +14,10 @@ function App() {
       <Header/>
       <Input/>
       <Today/>
-      <Boxy/>
     </div>
   )
 }
+
+
 
 export default App
