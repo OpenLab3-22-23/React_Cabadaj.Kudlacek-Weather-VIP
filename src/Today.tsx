@@ -1,22 +1,24 @@
 import { useState } from "react"
 
 export default function Today(){
-	const [today,setToday]=useState<string>()
-	const [windspeed,setSpeed]=useState<number>()
-	const [weather,setWeather]=useState<string>()
-	const [city,setCity]=useState<string>()
-	const [temp,setTemp]=useState<number>()
+	const [today,setToday]=useState<string>("Kysucke nove mesto")
+	const [temp,setTemp]=useState<number>(3)
+	const [windspeed,setSpeed]=useState<number>(1)
+	const [weather,setWeather]=useState<string>("Oblacno")
 
-	const [nameday1,setBox1]=useState(0)
-	const [nameday2,setBox2]=useState(0)
-	const [nameday3,setBox3]=useState(0)
-	const [nameday4,setBox4]=useState(0)
+	const [nameday1,setBox1]=useState<string>("Pondelok")
+	const [nameday2,setBox2]=useState<string>("Utorok")
+	const [nameday3,setBox3]=useState<string>("Streda")
+	const [nameday4,setBox4]=useState<string>("Stvrtok")
 
-	const [temp1,setTemp1]=useState(0)
-	const [temp2,setTemp2]=useState(0)
-	const [temp3,setTemp3]=useState(0)
-	const [temp4,setTemp4]=useState(0)
+	const [temp1,setTemp1]=useState<number>(0)
+	const [temp2,setTemp2]=useState<number>(0)
+	const [temp3,setTemp3]=useState<number>(0)
+	const [temp4,setTemp4]=useState<number>(0)
 
+	function nameday() {
+	
+	  }
 
 
     return(
@@ -24,7 +26,7 @@ export default function Today(){
 		<div className="now">
 			<img src="https://openweathermap.org/img/wn/04n.png" alt="" className="iconweather" />
 		  <div className="now_info">
-			<h4 className="city">{city}</h4>
+			<h4 className="city">{today}</h4>
 			<div className="temp">{temp}</div>
 			<div className="windspeed">{windspeed}</div>
 			<div className="typeOfWeather">{weather}</div>
