@@ -14,6 +14,10 @@ function App() {
       <Header/>
       <Input/>
       <Today/>
+      <Boxy den1={"Utorok"}/>
+      <Boxy den2={"Streda"}/>
+      <Boxy den3={"Stvrtok"}/>
+      <Boxy den4={"Piatok"}/>
     </div>
   )
 }
