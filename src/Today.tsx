@@ -1,4 +1,9 @@
 import { useState } from "react"
+import Boxy from './Boxy'
+import Boxy1 from './Boxy1'
+import Boxy2 from './Boxy2'
+import Boxy3 from './Boxy3'
+
 
 export default function Today(){
 	const [today,setToday]=useState<string>("Kysucke nove mesto")
@@ -16,11 +21,6 @@ export default function Today(){
 	const [temp3,setTemp3]=useState<number>(0)
 	const [temp4,setTemp4]=useState<number>(0)
 
-	function nameday() {
-	
-	  }
-
-
     return(
 		<div className="today">
 		<div className="now">
@@ -32,7 +32,12 @@ export default function Today(){
 			<div className="typeOfWeather">{weather}</div>
 		  </div>
 		  </div>
+		  <div className="cover">
+		  <Boxy den1={"Utorok"}/>
+          <Boxy1 den2={"Streda"}/>
+    	  <Boxy2 den3={"Stvrtok"}/>
+    	  <Boxy3 den4={"Piatok"}/>
 		  </div>
-			
+		  </div>
     )
 }

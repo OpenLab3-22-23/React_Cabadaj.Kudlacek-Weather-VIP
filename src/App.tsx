@@ -16,13 +16,8 @@ function App() {
     <div className="container">
       <Header/>
       <Input/>
-      <Today/>
-      <div className="cover">  
-      <Boxy den1={"Utorok"}/>
-      <Boxy1 den2={"Streda"}/>
-      <Boxy2 den3={"Stvrtok"}/>
-      <Boxy3 den4={"Piatok"}/>
-    </div>
+      <Today/> 
+
     </div>
   )
 }
