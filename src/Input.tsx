@@ -1,9 +1,10 @@
-export default function Input(){
+export default function Input(value, onChange){
     return(
-       
+        
         <div className="formular">
-        <input type="text" className="search-bar" placeholder="Search for a city... "/>
-        <button type="button" className="btn">submit</button>
+        <input type="text" className="search-bar" placeholder="Search for a city... " value={value} onChange={e => onChange(e.target.value)}/>
+        <button type="button" className="btn" >submit</button>
         </div>
+
     )
 }
