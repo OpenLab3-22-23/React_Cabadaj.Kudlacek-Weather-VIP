@@ -12,7 +12,7 @@ function App() {
 
 useEffect(()=>{
   fetch(
-    `https://api.openweathermap.org/data/2.5/forecast?q=${value}&units=metric&appid=4ed9898ef0d4415dd8423a2a74b26ef8`
+    `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=4ed9898ef0d4415dd8423a2a74b26ef8`
     )
     .then((response) => {
       if (!response.ok) {
@@ -24,11 +24,13 @@ useEffect(()=>{
     .then((data) => setData(data));
 },[])
 
+
+
   return (
     <div className="container"> 
       <Header/>
       <Input value={city} onChange={setCity}/>
-      {data && <Today today={data.city.name} temp={data.list[0].main.temp + "°C"} windspeed={data.list[0].wind.speed + " km/h"} weather={data.list[0].weather[0].description}/>
+      {data && <Today today={data.city.name} temp={data.list[0].main.temp + "°C"} windspeed={data.list[0].wind.speed + " km/h"} weather={data.list[0].weather[0].description} nameday1={data.list[7].dt_txt} temp1={data.list[7].main.temp + "°C"} nameday2={data.list[15].dt_txt} temp2={data.list[15].main.temp + "°C"} nameday3={data.list[23].dt_txt} temp3={data.list[23].main.temp + "°C"} nameday4={data.list[31].dt_txt} temp4={data.list[31].main.temp + "°C"}/>
 }
    </div>
   )
@@ -75,7 +77,5 @@ let weather = {
   //   }
   // });
   // weather.fetchWeather("...");
-
-
 
 export default App
