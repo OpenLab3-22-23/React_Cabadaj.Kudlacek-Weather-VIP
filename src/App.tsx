@@ -7,9 +7,12 @@ import Today from './Today'
 import Boxy from './Boxy'
 
 function App() {
-  const [city, setCity] = useState("Horný Vadičov")
+  const [city, setCity] = useState("...")
   const [data, setData] = useState(null)
 
+  function changedData(e) {
+    setCity(e.target.value);
+}
 useEffect(()=>{
   fetch(
     `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=4ed9898ef0d4415dd8423a2a74b26ef8`
@@ -29,7 +32,7 @@ useEffect(()=>{
   return (
     <div className="container"> 
       <Header/>
-      <Input value={city} onChange={setCity} />
+      <Input onChange={setCity}  />
       {data && <Today 
       today={data.city.name}
       temp={data.list[0].main.temp + "°C"} 
@@ -53,10 +56,10 @@ useEffect(()=>{
   )
 }
 
-let weather = {
-  fetchWeather: function (city:string) {
-    },
-  }
+// let weather = {
+//   fetchWeather: function (value:string) {
+//     },
+//   }
   
   // search: function () {
   //   this.fetchWeather(document.querySelector(".search-bar")!.value);
@@ -66,8 +69,8 @@ let weather = {
   // weather.search();
   // });
   
-  // document.querySelector(".search-bar")
-  // .addEventListener("keyup", function (event) {
+  // // document.querySelector(".search-bar")
+  // .addEventListener("keyup", function (weather) {
   //   if (event.key == "Enter") {
   //   weather.search();
   //   }
